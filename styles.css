@@ -1,0 +1,141 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+/* variables */
+:root {
+  --light-red-text: hsl(356, 100%, 66%);
+  --very-light-red-hover-background: hsl(355, 100%, 74%);
+  --very-dark-blue-headings: hsl(208, 49%, 24%);
+  --white: hsl(0, 0%, 100%);
+  --grayish-blue-footer-text: hsl(240, 2%, 79%);
+  --very-dark-grayish-blue-body-copy: hsl(207, 13%, 34%);
+  --very-dark-black-blue-footer-background: hsl(240, 10%, 16%);
+}
+
+/* initialization */
+
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body{
+  background-color: var(--white);
+  font-family:'Overpass', sans-serif,'Ubuntu', sans-serif;
+  font-size: 1.6rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* mobile */
+/* header */
+
+.header {
+  background-color: var(--light-red-text);
+  width: 100%;
+}
+
+.header summary{
+  background-color: var(--light-red-text);
+  list-style: none;
+  margin:0;
+  padding:0;
+  overflow: hidden;
+  text-align: right;
+}
+
+.header ul {
+  background-color: var(--light-red-text);
+  list-style: none;
+  margin:0;
+  padding:0;
+  overflow: hidden;
+  text-align: right;
+}
+
+header .menu_summary{
+  display: block;
+  font-family:'Overpass', sans-serif,'Ubuntu', sans-serif;
+  padding:20px;
+  margin: 10px;
+  background-color: none;
+}
+
+header li .menu_link {
+  display: block;
+  font-family:'Overpass', sans-serif,'Ubuntu', sans-serif;
+  padding:20px;
+  margin: 10px;
+  background-color: none;
+}
+
+header .menu_summary:hover{
+   background-color: var(--very-light-red-hover-background);
+}
+header li .menu_link:hover{
+   background-color: var(--grayish-blue-footer-text);
+}
+
+header .header_logo{
+  display:block;
+  float: left;
+  padding: 2rem 3rem;
+}
+
+.header .header_menu .menu_summary {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.5s ease-out;
+}
+
+.header .header_icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 2.8rem;
+  user-select: none;
+}
+
+.header .header_icon .icon {
+  background: var(--white);
+  display: block;
+  height: 0.2rem;
+  position: relative;
+  top: 18px;
+  transition: background ease-out 0.2 ease-out;
+  width: 2.5rem;
+}
+
+.header .header_icon .icon:before,
+.header .header_icon .icon:after {
+  background: var(--white);
+  content: '';
+  display:block;
+  height:100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.header .header_icon .icon:before {
+  top: 8px;
+}
+
+.header .header_icon .icon:after {
+  top: -8px;
+}
+
+.header .header_btn:checked  ~ .menu_summary >.menu {
+  max-height: 240px;
+}
+
+/* Esta es la parte que no funcina, en teoria deberia de hacer que el menu de hamburguesa, se abra y se cierre,
+cuando se selecciona el "checkbox" */
+
