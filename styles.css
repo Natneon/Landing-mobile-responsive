@@ -132,10 +132,12 @@ header .header_logo{
   top: -8px;
 }
 
-.header .header_btn:checked  ~ .menu_summary >.menu {
+/* Esta es la parte que no funciona, en teoria deberia de hacer que el menu de hamburguesa, se abra y se cierre,
+cuando se selecciona el "checkbox" */
+
+.header .header_btn:checked ~ .header_menu > .menu_summary > .menu {   
   max-height: 240px;
 }
 
-/* Esta es la parte que no funcina, en teoria deberia de hacer que el menu de hamburguesa, se abra y se cierre,
-cuando se selecciona el "checkbox" */
+
 
