@@ -135,9 +135,35 @@ header .header_logo{
 /* Esta es la parte que no funciona, en teoria deberia de hacer que el menu de hamburguesa, se abra y se cierre,
 cuando se selecciona el "checkbox" */
 
-.header .header_btn:checked ~ .header_menu > .menu_summary > .menu {   
+/* .header .header_btn:checked ~ .header_menu > .menu_summary > .menu {   
   max-height: 240px;
+} */
+
+
+/*
+  A veces las animaciones en CSS son complicadas,
+  así que algo que hago es contruirlas "de a poquito".
+  En este caso primero le agregué al primer selector
+  un color rojo (.header .header_btn ~ .header_menu)
+  para saber "qué" estoy seleccionado.
+  Luego le agregué el color verde al checked(border-color: green)
+  al que está "checked" (.header .header_btn:checked ~ .header_menus)
+  para saber qué pasa cuando está checked :P y si sí está haciendo "algo".
+  Por último juego con esas dos condiciones, una es un "pre checked"
+  y otra es un "checked".
+  ¿Cómo quiero que esté antes del checked y cómo quiero que esté después
+  del checked?
+*/
+
+.header .header_btn ~ .header_menu {
+  border: 10px solid red;
+  height: 0;
+  overflow: hidden;
 }
 
+.header .header_btn:checked ~ .header_menu {
+  border-color: green;
+  height: fit-content;
+}
 
 
